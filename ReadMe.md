@@ -2,12 +2,12 @@
 ### Intro 
 
 This is the Readme for the code that I created, but I felt that this was probably the easiest way
-for me to answer the questions, and fill in the design portion of the code test,
+for me to answer the design portion of the code test,
 and also do some (ALWAYS IMPORTANT) documentation on what I created too.
 
 ### Entity Model 
 
-It was posed that is the Entity model for the design portion 
+It was posed that this is the Entity model for the design portion 
 
 ![alt text](http://url/to/img.png)
 
