@@ -11,14 +11,14 @@ It was posed that this is the Entity model for the design portion
 
 ![alt text](http://url/to/img.png)
 
-That might be sufficient for the needs set fourth,
-the same information can be saved, but there are modifications to those tables that must be done. 
+That might not be sufficient for the needs set fourth.
+The same information can be saved, but there are modifications to those tables that must be done. 
 
 ![alt text](http://url/to/img.png)
 
 Here a quick run down of the final Entity model designed
 
-As we can see there is a local database side ( mobile ) and a server side (server)
+As we can see there is a local database side ( mobile ) and a server side ( server )
 Some of the fields do need explaining 
 
 ..i   isOnServer
