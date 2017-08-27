@@ -21,18 +21,18 @@ Here a quick run down of the final Entity model designed
 As we can see there is a local database side ( mobile ) and a server side ( server )
 Some of the fields do need explaining 
 
-..i   isOnServer
+..1   **serverCopy**
 ...On both the shopping list and items table.
 ...It's used to tell the local device that its information is up to date with the server
 ...so that record will be definitely up to date with te server, 
 ...this only really come when the record is updated on the server by another device.
 
-..ii  isLocallyModified 
+..2  **isLocallyModified** 
 ...On both the shopping list and items table.
 ...this is a flag that the local device will set when it updates/adds a record
 ...This will show that its change should be saved back to the server.
 
-..iii hasBeenLocallyDeleted
+..3 **isLocallyDeleted**
 ...A local device can't actually delete a record by themselves.
 ...If the record is deleted then how will the server know to delete it too. that is where this field comes in.
 ...after all the changed have happened at the end the server will send back the end result records for the local device to have.
