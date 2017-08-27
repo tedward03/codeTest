@@ -1,3 +1,6 @@
+/*
+    Copyright of Ed.Co Enterprises
+*/
 package sync;
 
 import org.springframework.boot.SpringApplication;
@@ -11,7 +14,12 @@ import sync.persistence.DataStoreManager;
 import sync.persistence.util.ShoppingListMapper;
 import sync.service.ShoppingListService;
 
-
+/**
+ * This is the main of the program,
+ * this runs the whole application and also holds the application configuration in the form of java annotated beans
+ *
+ *	@author tedward603@gmail.com
+ */
 @SpringBootApplication
 public class Application extends SpringBootServletInitializer{
 

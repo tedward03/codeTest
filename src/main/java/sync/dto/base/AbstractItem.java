@@ -1,18 +1,24 @@
+/*
+    Copyright of Ed.Co Enterprises
+*/
 package sync.dto.base;
 
-import sync.dto.server.ShoppingListServer;
-
-public class AbstractShoppingListItem {
+/**
+ * Abstract class for inheritance by the Server item and device Item
+ *
+ * @author tedward603@gmail.com
+ */
+public class AbstractItem {
     private Long parentListId;
     private Long itemId;
     private String itemName;
     private boolean isMarkedAsChecked;
     private String quantityDescription;
 
-    public AbstractShoppingListItem() {
+    public AbstractItem() {
     }
 
-    public AbstractShoppingListItem(Long parentListId,Long itemId, String itemName, boolean isMarkedAsChecked, String quantityDescription) {
+    public AbstractItem(Long parentListId, Long itemId, String itemName, boolean isMarkedAsChecked, String quantityDescription) {
         this.parentListId = parentListId;
         this.itemId = itemId;
         this.itemName = itemName;

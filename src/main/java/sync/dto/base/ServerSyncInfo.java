@@ -1,5 +1,14 @@
+/*
+    Copyright of Ed.Co Enterprises
+*/
 package sync.dto.base;
 
+/**
+ *  this DTO is used for storing the information taken in from the device ,and the default conditions sent out,
+ * this object hold the state of each of the items and list in the program
+ *
+ * @author tedward603@gmail.com
+ */
 public class ServerSyncInfo {
 
     private boolean isServerCopy;

@@ -1,14 +1,22 @@
+/*
+    Copyright of Ed.Co Enterprises
+*/
 package sync.dto.base;
 
-public class AbstractShoppingList implements ShoppingList {
+/**
+ * Abstract class for inheritance by the Server list and device list
+ *
+ * @author tedward603@gmail.com
+ */
+public class AbstractList implements ShoppingList {
     private Long idOnDevice;
     private String listName;
     private String owner;
 
-    public AbstractShoppingList() {
+    public AbstractList() {
     }
 
-    public AbstractShoppingList(Long idOnDevice, String listName,String owner) {
+    public AbstractList(Long idOnDevice, String listName, String owner) {
         this.idOnDevice = idOnDevice;
         this.listName = listName;
         this.owner = owner;

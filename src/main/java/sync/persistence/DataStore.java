@@ -1,15 +1,19 @@
+/*
+    Copyright of Ed.Co Enterprises
+*/
 package sync.persistence;
 
-import org.springframework.stereotype.Component;
-import sync.dto.server.ShoppingListItemServer;
-import sync.dto.server.ShoppingListServer;
+import sync.dto.server.ServerItem;
+import sync.dto.server.ServerList;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 /**
- * This is the mock of the datastore
+ * This is the mock of the Datastore
+ *
+ * @author tedward603@gmail.com
  */
 public class DataStore {
 
@@ -17,50 +21,50 @@ public class DataStore {
      * Constructs some server device data
      * @return the mocked data of two list
      */
-    public List<ShoppingListServer> getMockedData(){
+    public List<ServerList> getMockedData(){
 
-        List<ShoppingListServer> returnedList = new ArrayList<ShoppingListServer>();
+        List<ServerList> returnedList = new ArrayList<ServerList>();
 
-        ShoppingListServer shoppingList1 = new ShoppingListServer();
+        ServerList shoppingList1 = new ServerList();
         shoppingList1.setIdOnDevice(1L);
         shoppingList1.setOwner("Jim");
         shoppingList1.setListName("Groceries");
-        ShoppingListItemServer item1 = new ShoppingListItemServer(
+        ServerItem item1 = new ServerItem(
                 1L,
                 1L,
                 "shampoo",
                 false,
                 "2");
-        ShoppingListItemServer item2 = new ShoppingListItemServer(
+        ServerItem item2 = new ServerItem(
                 1L,
                 2L,
                 "conditioner",
                 false,
                 "2");
-        shoppingList1.setShoppingListItemServerList(new ArrayList<ShoppingListItemServer>(Arrays.asList(item1,item2)));
+        shoppingList1.setShoppingListItemServerListItem(new ArrayList<ServerItem>(Arrays.asList(item1,item2)));
 
-        ShoppingListServer shoppingList2 = new ShoppingListServer();
+        ServerList shoppingList2 = new ServerList();
         shoppingList2.setIdOnDevice(2L);
         shoppingList2.setOwner("Joe");
         shoppingList2.setListName("Fruit");
-        ShoppingListItemServer item3 = new ShoppingListItemServer(
+        ServerItem item3 = new ServerItem(
                 2L,
                 3L,
                 "apples",
                 false,
                 "25");
-        ShoppingListItemServer item4= new ShoppingListItemServer(
+        ServerItem item4= new ServerItem(
                 2L,
                 4L,
                 "oranges",
                 false,
                 "30");
-        shoppingList2.setShoppingListItemServerList(new ArrayList<ShoppingListItemServer>(Arrays.asList(item3,item4)));
+        shoppingList2.setShoppingListItemServerListItem(new ArrayList<ServerItem>(Arrays.asList(item3,item4)));
 
         returnedList.add(shoppingList1);
         returnedList.add(shoppingList2);
         return returnedList;
-}
+    }
 
 
 

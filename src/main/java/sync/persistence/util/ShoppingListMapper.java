@@ -1,59 +1,46 @@
+/*
+    Copyright of Ed.Co Enterprises
+*/
 package sync.persistence.util;
 
 import sync.dto.base.ServerSyncInfo;
-import sync.dto.device.ShoppingListDevice;
-import sync.dto.device.ShoppingListItemDevice;
-import sync.dto.server.ShoppingListItemServer;
-import sync.dto.server.ShoppingListServer;
+import sync.dto.device.DeviceItem;
+import sync.dto.device.DeviceList;
+import sync.dto.server.ServerItem;
+import sync.dto.server.ServerList;
 
-import java.util.ArrayList;
-import java.util.List;
-
+/**
+ * This Utility mapper is used for mapping back and forth between device items/list and server item/list
+ *
+ * @author tedward603@gmail.com
+ */
 public class ShoppingListMapper {
 
-
-    public List<ShoppingListDevice> mapServerToDeviceList(List<ShoppingListServer> serverShoppingListCollection){
-        List<ShoppingListDevice> deviceShoppingListCollection = new ArrayList<ShoppingListDevice>();
-        for (ShoppingListServer serverList: serverShoppingListCollection) {
-            deviceShoppingListCollection.add(mapServerToDeviceListSingle(serverList));
-        }
-        return deviceShoppingListCollection;
-    }
-
-    public List<ShoppingListServer> mapDeviceToServerList(List<ShoppingListDevice> deviceShoppingListCollection){
-        List<ShoppingListServer> serverShoppingListCollection = new ArrayList<ShoppingListServer>();
-        for (ShoppingListDevice deviceList: deviceShoppingListCollection) {
-            serverShoppingListCollection.add(mapDeviceToServerListSingle(deviceList));
-        }
-        return serverShoppingListCollection;
-    }
-
-
-    public ShoppingListDevice mapServerToDeviceListSingle(ShoppingListServer serverList){
-        ShoppingListDevice shoppingListDevice =  new ShoppingListDevice(
+    public DeviceList mapServerToDeviceListSingle(ServerList serverList){
+        DeviceList deviceList =  new DeviceList(
                 serverList.getIdOnDevice(),
                 serverList.getListName(),
                 serverList.getOwner());
-        for (ShoppingListItemServer serverItem: serverList.getShoppingListItemServerList()) {
-            shoppingListDevice.getShoppingListItemDeviceList().add(mapServerToDeviceItem(serverItem));
+        for (ServerItem serverItem: serverList.getShoppingListItemServerListItem()) {
+            deviceList.getShoppingListItemDeviceListItem().add(mapServerToDeviceItem(serverItem));
         }
-        shoppingListDevice.setServerSyncInfo(new ServerSyncInfo(true,false,false));
-        return shoppingListDevice;
+        deviceList.setServerSyncInfo(new ServerSyncInfo(true,false,false));
+        return deviceList;
     }
 
-    public ShoppingListServer mapDeviceToServerListSingle(ShoppingListDevice deviceList){
-        ShoppingListServer serverList = new ShoppingListServer(
+    public ServerList mapDeviceToServerListSingle(DeviceList deviceList){
+        ServerList serverList = new ServerList(
                 deviceList.getIdOnDevice(),
                 deviceList.getListName(),
                 deviceList.getOwner());
-        for(ShoppingListItemDevice deviceItem: deviceList.getShoppingListItemDeviceList()){
-            serverList.getShoppingListItemServerList().add(mapDeviceToServerItem(deviceItem));
+        for(DeviceItem deviceItem: deviceList.getShoppingListItemDeviceListItem()){
+            serverList.getShoppingListItemServerListItem().add(mapDeviceToServerItem(deviceItem));
         }
         return serverList;
     }
 
-   public ShoppingListItemDevice mapServerToDeviceItem(ShoppingListItemServer serverItem){
-       return new ShoppingListItemDevice(
+   public DeviceItem mapServerToDeviceItem(ServerItem serverItem){
+       return new DeviceItem(
                serverItem.getParentListId(),
                serverItem.getItemId(),
                serverItem.getItemName(),
@@ -62,8 +49,8 @@ public class ShoppingListMapper {
                new ServerSyncInfo(true,false,false));
     }
 
-    public ShoppingListItemServer mapDeviceToServerItem(ShoppingListItemDevice deviceItem){
-        return new ShoppingListItemServer(
+    public ServerItem mapDeviceToServerItem(DeviceItem deviceItem){
+        return new ServerItem(
                 deviceItem.getParentListId(),
                 deviceItem.getItemId(),
                 deviceItem.getItemName(),
