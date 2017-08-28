@@ -10,7 +10,7 @@ and also do some (ALWAYS IMPORTANT) documentation on what I created too.
 
 It was posed that this is the Entity model for the design portion 
 
-![previousEM](http://url/to/img.png)
+![previousEM](https://github.com/tedward03/codeTest/blob/master/pics/previousEntityModel.png)
 
 That might not be sufficient for the needs set fourth.
 The same information can be saved, but there are modifications to those tables that must be done. 
