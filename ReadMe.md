@@ -206,15 +206,14 @@ so lets break these down
 1. This is where the user will find the other user and invite them to collaborate, this request will be sent to the server.
 2. The server will response by creating a many to many link for the (already existing) list and the (already existing ) User and setting the accepted flag to false.
 
-![flow2](https://github.com/tedward03/codeTest/blob/master/pics/Flow2.jpg)
-
+<img src="https://github.com/tedward03/codeTest/blob/master/pics/Flow2.jpg" width="480">
 ##### 2. User1 send whatsapp link to User2.( or the parameters therein)
 
 User1 will have to send **three** parameters, 
 two human readable parameters to show user2 what they are accepting, **ListName** and the **User1's Name**.
 the third parameter will be the **id of the list** so that when user2 accepts the invitation we have context for the server.
 
-![flow3](https://github.com/tedward03/codeTest/blob/master/pics/flow3.jpg)
+<img src="https://github.com/tedward03/codeTest/blob/master/pics/flow3.jpg" width="480">
 
 ##### 3. User2 accepts the invitation.
 
@@ -223,7 +222,7 @@ the server then sets the accepted to true and now whenever the user gets their l
 
 if the user declines then the decline request is sent. the server will delete the user-list link
 
-![flow4](https://github.com/tedward03/codeTest/blob/master/pics/flow4.jpg)
+<img src="https://github.com/tedward03/codeTest/blob/master/pics/flow4.jpg" width="480">
 
 ### How (what) does your API look like?
 
@@ -381,9 +380,9 @@ Open your favourite rest client and give it a go, right now it is hosted here.
 
 http://codetest.eu-central-1.elasticbeanstalk.com/api/shoppingList/sync/
 
-The only two users in place so far are Jim and Joe.
+The only two users in place so far are **Jim** and **Joe**.
 
-The Request body for getting all the info for a user is and empty Json Array
+The Request body for getting all the info for a user is an empty Json Array
 So this rest call should get you some information
 
 ```
