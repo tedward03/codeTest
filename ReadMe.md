@@ -15,7 +15,7 @@ It was posed that this is the Entity model for the design portion
 That might not be sufficient for the needs set fourth.
 The same information can be saved, but there are modifications to those tables that must be done. 
 
-![moddedEM](http://url/to/img.png)
+![moddedEM](https://github.com/tedward03/codeTest/blob/master/pics/entityModel2.png)
 
 Here a quick run down of the final Entity model designed
 
@@ -42,7 +42,7 @@ after all the changed have happened at the end the server will send back the end
 When the interaction between the modification of the server and client happen
 the server will give these values back for each client individually. in this form
 
-![serverSync](http://url/to/img.png)
+![serverSync](https://github.com/tedward03/codeTest/blob/master/pics/serversyncInfo.png)
 
 IV **listIdOnDevice/Server**
 this is a foreign key that links the items to the shopping list. that is it.
@@ -65,7 +65,7 @@ i.e. Another user did the same action and already synced their changes.
 
 Ok so that should be done using the flags from before. Lets add in a quick flow diagram
 
-![flowDiagram1](http://url/to/img.png)
+![flowDiagram1](https://github.com/tedward03/codeTest/blob/master/pics/flow1.jpg)
 
 ..1. The user would send their changes to the server for the records that were changed locally.
 ..2. The Server will change its record in correspondence to the changes that were on the local device,
@@ -188,7 +188,7 @@ accept the invitation and then get access to the according list.*
 
 Ok so for this one is comes down to this part of the database.
 
-![entitymodel1](http://url/to/img.png)
+![entitymodel1](https://github.com/tedward03/codeTest/blob/master/pics/entityModel1.png)
 
 The **many to many** relationship is what we need, so that multiple users can share the same list. 
 and users can have multiple list for themselves.
@@ -206,7 +206,7 @@ so lets break these down
 1. This is where the user will find the other user and invite them to collaborate, this request will be sent to the server.
 2. The server will response by creating a many to many link for the (already existing) list and the (already existing ) User and setting the accepted flag to false.
 
-![flow2](http://url/to/img.png)
+![flow2](https://github.com/tedward03/codeTest/blob/master/pics/Flow2.jpg)
 
 ##### 2. User1 send whatsapp link to User2.( or the parameters therein)
 
@@ -214,7 +214,7 @@ User1 will have to send **three** parameters,
 two human readable parameters to show user2 what they are accepting, **ListName** and the **User1's Name**.
 the third parameter will be the **id of the list** so that when user2 accepts the invitation we have context for the server.
 
-![flow3](http://url/to/img.png)
+![flow3](https://github.com/tedward03/codeTest/blob/master/pics/flow3.jpg)
 
 ##### 3. User2 accepts the invitation.
 
@@ -223,7 +223,7 @@ the server then sets the accepted to true and now whenever the user gets their l
 
 if the user declines then the decline request is sent. the server will delete the user-list link
 
-![flow4](http://url/to/img.png)
+![flow4](https://github.com/tedward03/codeTest/blob/master/pics/flow4.jpg)
 
 ### How (what) does your API look like?
 
